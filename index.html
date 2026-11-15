@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#0e0f13">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Runner">
+<title>Runner</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="library">
+  <header>
+    <h1>Runner</h1>
+    <button id="importBtn" class="primary">＋ Import</button>
+  </header>
+  <div id="installHint" class="hint" hidden>
+    To install: tap <b>Share</b> then <b>Add to Home Screen</b>. <button class="link" id="hideHint">Dismiss</button>
+  </div>
+  <div id="status" class="status" hidden></div>
+  <main id="list"></main>
+  <div id="empty" class="empty" hidden>
+    <div class="big">▶︎</div>
+    <p>No projects yet.</p>
+    <p class="dim">Import a <b>.zip</b> of an HTML/JS game (or a single <b>.html</b> file) from the Files app.</p>
+  </div>
+  <footer>
+    <button class="link" id="urlBtn">Import from link</button>
+    <span id="storageInfo" class="dim"></span>
+  </footer>
+</div>
+
+<div id="player" hidden>
+  <button id="handle" aria-label="Runner menu">⋯</button>
+</div>
+
+<div id="sheet" class="sheet" hidden>
+  <div class="sheet-card">
+    <div id="sheetTitle" class="sheet-title"></div>
+    <div id="sheetBody"></div>
+    <button class="sheet-btn cancel" id="sheetCancel">Cancel</button>
+  </div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+
+<input type="file" id="fileIn" accept=".zip,.html,.htm,application/zip,application/x-zip-compressed,text/html" hidden>
+<input type="file" id="updateIn" accept=".zip,.html,.htm,application/zip,application/x-zip-compressed,text/html" hidden>
+<input type="file" id="savesIn" accept=".json,application/json" hidden>
+
+<script src="vendor/fflate.js"></script>
+<script src="saves.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
